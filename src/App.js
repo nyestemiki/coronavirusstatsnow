@@ -68,10 +68,10 @@ export default class App extends Component {
       <Style>
         <Top>
           <Select onChange={this.selectCountry} id="countySelector">
-            <option value="world">{this.localization("World") || "World"}</option>
-            {Object.entries(this.state.countries).map(([country, code]) => (
-              <option value={code} key={code}>{country}</option>
-            ))}
+            <option key="world" value="world">{this.localization("World") || "World"}</option>
+            {Array.from(this.state.countries).map(({ name, iso2 }) => 
+              <option value={iso2} key={iso2}>{name}</option>
+            )}
           </Select>
           <Language>
             <img data-lang="en" alt="en" src="/imgs/en.jpg" onClick={this.setLanguage}/>

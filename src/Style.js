@@ -11,6 +11,7 @@ const Top = styled.div`
     display: flex;
     place-content: space-between;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, .5);
     padding: 1rem 2rem;
     position: fixed;
