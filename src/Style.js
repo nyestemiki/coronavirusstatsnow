@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Style = styled.div`
-    background: rgba(0, 0, 0, .75);
+    background: rgba(0, 0, 0, .8);
     min-height: 100vh;
     max-height: 100%;
     position: relative;
@@ -12,7 +12,7 @@ const Top = styled.div`
     place-content: space-between;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .25);
     padding: 1rem 2rem;
     position: fixed;
     width: 100vw;
@@ -34,12 +34,16 @@ const Top = styled.div`
 
 const Select = styled.select`
     max-width: 50vw;  
+    color: white;
+    text-shadow: 0 0 3px black;
+    box-shadow: 0 0 2px black;
 `;
 
 const Language = styled.div`
     display: flex;
     place-items: space-around;
     place-content: center;
+    box-shadow: 0 0 2px black;
     
     img {
         width: 2rem;
@@ -52,6 +56,7 @@ const Language = styled.div`
     }
 `;
 
+// Contains the DataContainers
 const Data = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -72,6 +77,9 @@ const DataContainer = styled.div`
     place-content: center;
     place-items: center;
     box-shadow: 0 0 10px black;
+    backdrop-filter: blur(10px);
+    color: white;
+    text-shadow: 0 0 6px black;
 `;
 
 const Number = styled.div`
@@ -94,7 +102,8 @@ const Updated = styled.div`
     padding: 5px;
     width: 100vw;
     backdrop-filter: blur(10px);
-    
+    text-shadow: 0 0 3px black;
+
     & > * {
         padding: 3px;
     }
