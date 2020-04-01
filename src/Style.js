@@ -34,7 +34,6 @@ const Top = styled.div`
 
 const Select = styled.select`
     max-width: 50vw;  
-    text-shadow: 0 0 3px black;
     box-shadow: 0 0 2px black;
 `;
 
