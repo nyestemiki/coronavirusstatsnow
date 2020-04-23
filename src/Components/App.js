@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import LanguageContext from '../Context/LanguageContext';
 import { Style, Top } from '../Style';
 import { formatDate } from '../Utils/format';
-import CountrySelector from './CountrySelector';
-import LanguageSelector from './LanguageSelector';
-import Tiles from './Tiles';
-import Updated from './Updated';
-import LanguageContext from '../Context/LanguageContext';
-import getData from '../Apis/getData';
-import getCountries from '../Apis/getCountries';
+import { getData, getCountries}  from '../Apis';
+import { CountrySelector, LanguageSelector, Tiles, Updated } from '.';
 
 export default function() {
   const [data, setData] = useState({});

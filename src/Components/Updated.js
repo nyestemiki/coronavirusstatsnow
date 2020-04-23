@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import LanguageContext from '../Context/LanguageContext';
-import { Updated } from '../Style';
 import { localization } from '../Utils/localization';
+import { Updated } from '../Style';
 
 export default function({ date }) {
     const language = useContext(LanguageContext);

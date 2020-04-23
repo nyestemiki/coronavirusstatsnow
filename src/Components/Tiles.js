@@ -1,6 +1,6 @@
 import React from 'react';
 import { Data } from '../Style';
-import Tile from './Tile';
+import { Tile } from '.';
 
 export default function({ data }) {
     return (
