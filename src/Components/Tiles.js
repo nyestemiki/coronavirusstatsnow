@@ -2,20 +2,11 @@ import React from 'react';
 import { Data } from '../Style';
 import { Tile } from '.';
 
-export default function({ data }) {
-    return (
-        <Data>
-          <Tile 
-            title="Confirmed" 
-            number={data.confirmed?.value}/>
-
-          <Tile 
-            title="Recovered" 
-            number={data.recovered?.value}/>
-            
-          <Tile 
-            title="Deaths" 
-            number={data.deaths?.value}/>
-        </Data>
-    )
-}
+// Tiles
+export default ({ data: { confirmed, recovered, deaths} }) => (
+  <Data>
+    <Tile title="Confirmed" number={confirmed?.value}/>
+    <Tile title="Recovered" number={recovered?.value}/>
+    <Tile title="Deaths" number={deaths?.value}/>
+  </Data>
+)

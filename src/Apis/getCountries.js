@@ -1,6 +1,4 @@
-export default async function() {
-    const res = await fetch('https://covid19.mathdro.id/api/countries');
-    const data = await res.json();
-
-    return data.countries;
-}
+export default async () => 
+    await fetch('https://covid19.mathdro.id/api/countries')
+        .then(res => res.json())
+        .then(data => data.countries);

@@ -1,23 +1,24 @@
-import React, { useContext} from 'react';
-import LanguageContext from '../Context/LanguageContext';
+import React from 'react';
 import { Select } from '../Style';
-import { localization } from '../Utils/localization';
+import localization from '../Utils/localization';
 
-export default function({ countries, selectCountry }) {
-    const language = useContext(LanguageContext);
+// CountrySelector
+export default ({ countries, selectCountry }) => {
+    function handleSelect(event) {
+        const selector = event.target;
+        const index = event.target.selectedIndex;
+        
+        selectCountry(selector[index].value);
+    }
 
     return (
-        <Select id="countySelector" onChange={event => 
-            selectCountry(event.target[event.target.selectedIndex].value)
-        }>
+        <Select id="countySelector" onChange={handleSelect}>
             <option key="world" value="world">
-                {localization("World", language) || "World"}
+                {localization("Around the World")}
             </option>
 
-            {Array
-                .from(countries)
-                .map(({ name, iso2 }) => 
-                    iso2 && <option value={iso2} key={iso2}>{name}</option>
+            {Array.from(countries).map(({ name, iso2 }) => 
+                iso2 && <option value={iso2} key={iso2}>{name}</option>
             )}
         </Select>
     );

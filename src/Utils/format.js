@@ -1,5 +1,5 @@
 // Returns a string with commas separating every three number
-export const formatNumber = (number = '') => 
+export const formatNumber = (number='') => 
     number
         .toString()
         .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
@@ -10,8 +10,5 @@ export const formatDate = date => {
     const hour = date.getHours();
     const minute = date.getMinutes();
 
-    return (
-        monthDayYear + " " + 
-        hour + ":" + (minute > 9 ? minute : "0" + minute)
-    );
+    return monthDayYear + " " + hour + ":" + (minute > 9 ? minute : "0" + minute);
 }

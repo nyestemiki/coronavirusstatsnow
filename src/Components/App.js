@@ -1,42 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import LanguageContext from '../Context/LanguageContext';
-import { Style, Top } from '../Style';
+import Style, { Top } from '../Style';
 import { formatDate } from '../Utils/format';
 import { getData, getCountries}  from '../Apis';
-import { CountrySelector, LanguageSelector, Tiles, Updated } from '.';
+import { CountrySelector, LanguageSelector, Tiles, Updated } from '.'; // components
 
+// App
 export default function() {
   const [data, setData] = useState({});
   const [countries, setCountries] = useState({});
   const [date, setDate] = useState("");
   const [language, setLanguage] = useState("en");
 
+  // Changes the data to the selected country's stats
+  // Global stats if no country specified
   async function selectCountry(countryCode) {
-    let newData = null;
-    
-    if (countryCode === 'world') {
-      newData = await getData();
-    } else {
-      newData = await getData(countryCode);
-    }
-    
-    setData(newData);
+    setData(
+      (countryCode === 'world') 
+        ? await getData() 
+        : await getData(countryCode)
+    );
 
-    setDate( formatDate(new Date()) );
+    // Actualizing the date of latest update
+    setDate( 
+      formatDate(new Date()) 
+    );
   }
 
+  // Loading the data on mount
   useEffect(() => {
-    async function loadAllData() {
+    // Retrieving global stats and countries
+    (async function loadAllData() {
       setData(await getData());
-
       setCountries(await getCountries());
-    }
+    })();
 
-    loadAllData();
+    // Actualizing the date of latest update
+    setDate( 
+      formatDate(new Date())
+    );
+  }, []); // No updates
 
-    setDate( formatDate(new Date()) );
-  }, []);
-
+  // Stats or countries not available
   if (data.length === 0 || countries.length === 0) {
     return <p>Loading...</p>
   }
@@ -45,7 +50,7 @@ export default function() {
     <LanguageContext.Provider value={language}>
       <Style>
         <Top>
-          <CountrySelector selectCountry={selectCountry} countries={countries}/>
+          <CountrySelector countries={countries} selectCountry={selectCountry}/>
           <LanguageSelector selectLanguage={setLanguage}/>
         </Top>
         <Tiles data={data}/>

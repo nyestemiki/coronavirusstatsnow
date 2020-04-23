@@ -1,16 +1,12 @@
-import React, { useContext } from 'react';
-import LanguageContext from '../Context/LanguageContext';
-import { localization } from '../Utils/localization';
+import React from 'react';
+import localization from '../Utils/localization';
 import { formatNumber } from '../Utils/format';
 import { DataContainer, Number, Title } from '../Style';
 
-export default function({ title, number }) {
-    const language = useContext(LanguageContext);
-    
-    return (
-        <DataContainer>
-            <Number>{formatNumber(number)}</Number>
-            <Title>{localization(title, language) || title}</Title>
-        </DataContainer>
-    )
-}
+// Tile
+export default ({ title, number }) => (
+    <DataContainer>
+        <Number>{formatNumber(number)}</Number>
+        <Title>{localization(title)}</Title>
+    </DataContainer>
+)

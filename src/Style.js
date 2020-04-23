@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
+// GLOBAL
+
 const Style = styled.div`
     background: rgba(0, 0, 0, .8);
     min-height: 100vh;
     max-height: 100%;
     position: relative;
 `;
+
+// TOP
 
 const Top = styled.div`
     display: flex;
@@ -34,14 +38,12 @@ const Top = styled.div`
 
 const Select = styled.select`
     max-width: 50vw;  
-    box-shadow: 0 0 2px black;
 `;
 
 const Languages = styled.div`
     display: flex;
     place-items: space-around;
     place-content: center;
-    box-shadow: 0 0 2px black;
     
     img {
         width: 2rem;
@@ -54,7 +56,8 @@ const Languages = styled.div`
     }
 `;
 
-// Contains the DataContainers
+// MIDDLE
+
 const Data = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -89,6 +92,8 @@ const Title = styled.div`
     font-size: 1.35rem;
 `;
 
+// BOTTOM
+
 const Updated = styled.div`
     position: fixed;
     bottom: 0;
@@ -107,4 +112,5 @@ const Updated = styled.div`
     }
 `;
 
-export { Style, Top, Select, Languages, Data, DataContainer, Number, Title, Updated };
+export default Style;
+export { Top, Select, Languages, Data, DataContainer, Number, Title, Updated };

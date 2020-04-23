@@ -1,5 +1,5 @@
 const localization = {
-    "World": {
+    "Around the World": {
         en: "Around the World",
         hu: "A világban",
         ro: "În lume",

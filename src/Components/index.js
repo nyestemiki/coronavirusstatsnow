@@ -1,3 +1,4 @@
+// Components
 export { default as CountrySelector } from './CountrySelector';
 export { default as LanguageSelector } from './LanguageSelector';
 export { default as Tile } from './Tile';

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Languages } from '../Style';
 
-export default function({ selectLanguage }) {
-    const languages = ["en", "hu", "ro", "de"]
+// LanguageSelector
+export default ({ selectLanguage }) => {
+    const languages = ["en", "hu", "ro", "de"];
 
     return (
         <Languages>
