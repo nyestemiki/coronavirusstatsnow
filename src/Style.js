@@ -37,7 +37,7 @@ const Select = styled.select`
     box-shadow: 0 0 2px black;
 `;
 
-const Language = styled.div`
+const Languages = styled.div`
     display: flex;
     place-items: space-around;
     place-content: center;
@@ -107,4 +107,4 @@ const Updated = styled.div`
     }
 `;
 
-export { Style, Top, Select, Language, Data, DataContainer, Number, Title, Updated };
+export { Style, Top, Select, Languages, Data, DataContainer, Number, Title, Updated };
