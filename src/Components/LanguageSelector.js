@@ -8,7 +8,6 @@ export default function({ selectLanguage }) {
         <Languages>
             {languages.map(language => (
                 <img 
-                    key={language}
                     data-lang={language} 
                     alt={language} 
                     src={`/imgs/${language}.jpg`}  

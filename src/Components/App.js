@@ -5,6 +5,7 @@ import CountrySelector from './CountrySelector';
 import LanguageSelector from './LanguageSelector';
 import Tiles from './Tiles';
 import Updated from './Updated';
+import LanguageContext from '../Context/LanguageContext';
 
 export default function() {
   const [data, setData] = useState({});
@@ -43,15 +44,17 @@ export default function() {
   }
 
   return (
-    <Style>
-      <Top>
-        <CountrySelector selectCountry={selectCountry} language={language} countries={countries}/>
-        <LanguageSelector selectLanguage={setLanguage}/>
-      </Top>
+    <LanguageContext.Provider value={language}>
+      <Style>
+        <Top>
+          <CountrySelector selectCountry={selectCountry} countries={countries}/>
+          <LanguageSelector selectLanguage={setLanguage}/>
+        </Top>
 
-      <Tiles language={language} data={data}/>
+        <Tiles data={data}/>
 
-      <Updated language={language} date={date}/>
-    </Style>
+        <Updated date={date}/>
+      </Style>
+    </LanguageContext.Provider>
   );
 }
