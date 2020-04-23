@@ -6,6 +6,8 @@ import LanguageSelector from './LanguageSelector';
 import Tiles from './Tiles';
 import Updated from './Updated';
 import LanguageContext from '../Context/LanguageContext';
+import getData from '../Apis/getData';
+import getCountries from '../Apis/getCountries';
 
 export default function() {
   const [data, setData] = useState({});
@@ -13,28 +15,28 @@ export default function() {
   const [date, setDate] = useState("");
   const [language, setLanguage] = useState("en");
 
-  const selectCountry = (countryCode) => {
+  async function selectCountry(countryCode) {
+    let newData = null;
+    
     if (countryCode === 'world') {
-      fetch('https://covid19.mathdro.id/api')
-        .then(res => res.json())
-        .then(data => setData(data));
+      newData = await getData();
     } else {
-      fetch(`https://covid19.mathdro.id/api/countries/${countryCode}`)
-        .then(res => res.json())
-        .then(data => setData(data));
+      newData = await getData(countryCode);
     }
+    
+    setData(newData);
 
     setDate( formatDate(new Date()) );
   }
 
   useEffect(() => {
-    fetch('https://covid19.mathdro.id/api')
-      .then(res => res.json())
-      .then(data => setData(data));
+    async function loadAllData() {
+      setData(await getData());
 
-    fetch('https://covid19.mathdro.id/api/countries')
-      .then(res => res.json())
-      .then(data => setCountries(data.countries));
+      setCountries(await getCountries());
+    }
+
+    loadAllData();
 
     setDate( formatDate(new Date()) );
   }, []);
@@ -50,9 +52,7 @@ export default function() {
           <CountrySelector selectCountry={selectCountry} countries={countries}/>
           <LanguageSelector selectLanguage={setLanguage}/>
         </Top>
-
         <Tiles data={data}/>
-
         <Updated date={date}/>
       </Style>
     </LanguageContext.Provider>

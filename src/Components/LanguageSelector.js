@@ -9,6 +9,7 @@ export default function({ selectLanguage }) {
             {languages.map(language => (
                 <img 
                     data-lang={language} 
+                    key={language}
                     alt={language} 
                     src={`/imgs/${language}.jpg`}  
                     onClick={() => selectLanguage(language)}/>
