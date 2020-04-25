@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LanguageSelector/> matches snapshot 1`] = `
+<Style__Languages>
+  <img
+    alt="en"
+    data-lang="en"
+    key="en"
+    onClick={[Function]}
+    src="/imgs/en.jpg"
+  />
+  <img
+    alt="hu"
+    data-lang="hu"
+    key="hu"
+    onClick={[Function]}
+    src="/imgs/hu.jpg"
+  />
+  <img
+    alt="ro"
+    data-lang="ro"
+    key="ro"
+    onClick={[Function]}
+    src="/imgs/ro.jpg"
+  />
+  <img
+    alt="de"
+    data-lang="de"
+    key="de"
+    onClick={[Function]}
+    src="/imgs/de.jpg"
+  />
+</Style__Languages>
+`;

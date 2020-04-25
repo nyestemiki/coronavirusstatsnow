@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tile/> matches snapshot 1`] = `
+<Style__DataContainer>
+  <Style__Number>
+    <CountUp
+      decimal="."
+      decimals={0}
+      delay={0}
+      duration={1}
+      easingFn={null}
+      end={123456789}
+      formattingFn={null}
+      onEnd={[Function]}
+      onPauseResume={[Function]}
+      onReset={[Function]}
+      onStart={[Function]}
+      onUpdate={[Function]}
+      prefix=""
+      preserveValue={false}
+      redraw={false}
+      separator=","
+      start={0}
+      startOnMount={true}
+      suffix=""
+      useEasing={true}
+    >
+      <Component />
+    </CountUp>
+  </Style__Number>
+  <Style__Title>
+    title
+  </Style__Title>
+</Style__DataContainer>
+`;

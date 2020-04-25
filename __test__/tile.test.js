@@ -1,5 +1,6 @@
 import { Tile } from '../src/Components';
 import { shallow } from 'enzyme';
+import toJSON from 'enzyme-to-json';
 
 const fakeTile = { 
     title: "title", 
@@ -20,4 +21,10 @@ describe('<Tile/>', () => {
 
         expect(CountUp).toBeTruthy();
     }); 
+
+    it('matches snapshot', () => {
+        const wrapper = shallow(<Tile {...fakeTile}/>);
+
+        expect(toJSON(wrapper)).toMatchSnapshot();
+    });
 });

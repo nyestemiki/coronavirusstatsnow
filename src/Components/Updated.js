@@ -6,6 +6,6 @@ import { Updated } from '../Style';
 export default ({ date }) => (
   <Updated>
     <span>{localization("Updated")}</span>
-    <span>{date}</span>
+    <span id="date">{date}</span>
   </Updated>
 )

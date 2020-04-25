@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tiles/> matches snapshot 1`] = `
+<Style__Data>
+  <_default
+    title="Confirmed"
+  />
+  <_default
+    title="Recovered"
+  />
+  <_default
+    title="Deaths"
+  />
+</Style__Data>
+`;
