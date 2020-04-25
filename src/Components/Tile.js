@@ -7,8 +7,13 @@ import CountUp from 'react-countup';
 export default ({ title, number }) => (
     <DataContainer>
         <Number>
-            <CountUp start={0} end={number ?? 0} delay={0} duration={1} separator=",">
-            {({ countUpRef }) => <div><span ref={countUpRef}/></div>}
+            <CountUp 
+                start={0} 
+                end={number ?? 0} 
+                delay={0} 
+                duration={1} 
+                separator=",">
+            {({ countUpRef }) => <div><span className="numberTest" ref={countUpRef}/></div>}
             </CountUp>
         </Number>
         <Title>{localization(title)}</Title>
