@@ -1,6 +1,6 @@
 import { LanguageSelector } from '../src/Components';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import toJSON from 'enzyme-to-json';
 
 describe('<LanguageSelector/>', () => {
     it('displays the four flags', () => {
@@ -18,6 +18,6 @@ describe('<LanguageSelector/>', () => {
     it('matches snapshot', () => {
         const wrapper = shallow(<LanguageSelector />);
 
-        expect(toJson(wrapper)).toMatchSnapshot();
+        expect(toJSON(wrapper)).toMatchSnapshot();
     });
 });

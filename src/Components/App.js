@@ -41,11 +41,6 @@ export default function() {
     );
   }, []); // No updates
 
-  // Stats or countries not available
-  if (data.length === 0 || countries.length === 0) {
-    return <p>Loading...</p>
-  }
-
   return (
     <LanguageContext.Provider value={language}>
       <Style>
