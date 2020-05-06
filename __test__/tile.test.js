@@ -13,6 +13,7 @@ describe('<Tile/>', () => {
         const Title = wrapper.find('Style__Title');
 
         expect(Title.dive().text()).toBe(fakeTile.title);
+        
    }); 
 
    it('renders countup properly', () => {
