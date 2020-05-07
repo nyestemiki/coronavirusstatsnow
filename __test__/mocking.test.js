@@ -4,6 +4,7 @@ class Person {
     }
 
     getName() {
+        // API Aufruf Simulation
         return new Promise((resolve, reject) => {
             setTimeout(() => resolve(this.name), 1000);
         });
